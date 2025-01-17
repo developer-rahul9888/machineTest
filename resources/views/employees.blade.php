@@ -9,15 +9,7 @@
             @foreach ($employees as $employee)
                 <li>{{ $employee->name }}
                     @if ($employee->children->count())
-                    <ul>
-                        @foreach ($employee->children as $child)
-                            <li>{{ $child->name }}
-                                @if ($child->children->count())
-                                    @include('partials.employee-children', ['children' => $child->children])
-                                @endif
-                            </li>
-                        @endforeach
-                    </ul>
+                        @include('partials.employee-children', ['children' => $employee->children])
                     @endif
                 </li>
             @endforeach

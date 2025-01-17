@@ -17,5 +17,10 @@ class UserController extends Controller
     
         return view('employees', compact('employees'));
     }
+
+    public function digitalClock()
+    {
+        return view('digital-clock');
+    }
 }
 
